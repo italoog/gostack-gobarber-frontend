@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 
-const Input: React.FC = () => <button type="button">teste</button>;
+import { Container } from './styles';
 
-export default Input;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement>;
+
+const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
+  <Container type="button" {...rest}>
+    {children}
+  </Container>
+);
+
+export default Button;
