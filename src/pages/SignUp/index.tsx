@@ -3,6 +3,7 @@ import { FiLock, FiArrowLeft, FiUser, FiMail } from 'react-icons/fi';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
+
 import getValidationError from '../../utils/getValidationErrors';
 
 import logoImg from '../../assets/logo.svg';
@@ -31,9 +32,6 @@ const SignUp: React.FC = () => {
         abortEarly: false,
       });
     } catch (err) {
-      // eslint-disable-next-line no-console
-      console.log(err);
-
       const errors = getValidationError(err);
 
       formRef.current?.setErrors(errors);
